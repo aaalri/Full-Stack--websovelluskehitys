@@ -1,30 +1,8 @@
-selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
-palvelin-->selain: HTML-koodi
-selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
-palvelin-->selain: main.css
-selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
-palvelin-->selain: spa.js
-
-note over selain:
-selain alkaa suorittaa js-koodia
-joka pyytää JSON-datan palvelimelta
-end note
-
-selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
-palvelin-->selain: [{ date: "2021-09-05T13:23:59.802Z", content: "" }, ...,{ content: "1", date: "2021-09-06T07:19:15.076Z" }]
-
-note over selain:
-selain suorittaa tapahtumankäsittelijän
-joka renderöi muistiinpanot näytölle sisältäen uuden muistiinpanon "1"
-end notetitle Untitled
-
-selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
-palvelin-->selain: main.js
-
 note over selain:
 Käyttäjä lisää selaimella lomakkeeseen muistiinpanon ja painaa nappia
 selain alkaa suorittaa js-koodia
 joka lähettää JSON-datan palvelimelle
+ja renderöi muistiinpanot näytölle sisältäen uuden muistiinpanon "2"
 end note
 
 selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa [{"content":"2","date":"2021-09-06T07:36:04.310Z"}]
